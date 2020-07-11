@@ -6,12 +6,16 @@ public class CGameManager : MonoBehaviour
 {
     public static CGameManager _instance;
 
+    [SerializeField] int score;
+
+    public int Score { get => score; set => score = value; }
 
     void Awake()
     {
         if (_instance == null)
         {
             _instance = this;
+            DontDestroyOnLoad(this);//L'objet gameManager ne sera pas détruit lors du chargement de second level
         }
         else
         {
@@ -25,7 +29,7 @@ public class CGameManager : MonoBehaviour
     {
         //Charger les données persistantes game state données
         //Charger le system et dépendences 
-
+        score = 0;
         Debug.Log("Loading...");
     }
 }
