@@ -15,7 +15,7 @@ public class CGameManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this);//L'objet gameManager ne sera pas détruit lors du chargement de second level
+            DontDestroyOnLoad(this.gameObject);//L'objet gameManager ne sera pas détruit lors du chargement de second level
         }
         else
         {
